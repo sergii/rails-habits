@@ -32,7 +32,9 @@ __Shortcut__          __Result__
 * `ctrl + left arrow`   Moves the cursor to the __left by one word__
 * `ctrl + right arrow`  Moves the cursor to the __right by one word__
 * `ctrl + a`            Moves the cursor to the __beginning__ of your command
+* `ctrl + k`            Clearing a line from the cursor __onwards__
 * `ctrl + e`            Moves the cursor to the __end__ of your command
+* `ctrl + r`            for command history __search__
 
 ## Aliases
 
@@ -83,7 +85,8 @@ alias armageddon="reset && rake db:drop db:create db:migrate db:seed && rails s"
 alias cov='/usr/bin/open -a "/Applications/Google Chrome.app" coverage/index.html'
 ```
 
-__Note:__ you’ll need to open a new Terminal window for changes in ~/.bash_profile to take place.
+__Note 1:__ Also git has it's own aliasing constructs, if you prefer you don't need to set it at the bash level.
+__Note 2:__ you’ll need to open a new Terminal window for changes in `~/.bash_profile` to take place or run `source ~/.bash_profile` to take effect.
 
 ## History Expansion
 
@@ -177,7 +180,9 @@ $ ssh-keygen -t rsa -C "your_email@example.com"
 
 After generate a key, add him to system:
 
-`$ ssh-add id_rsa`
+```bash
+$ ssh-add id_rsa
+```
 
 Now you may copy `id_rsa.pub` key to your server or repo system.
 
