@@ -66,12 +66,12 @@ You make your own, for example my custom aliases:
 
   ```Ruby
   # folders
-  alias .="cd .""
+  alias .="cd ."
   alias ..="cd .."
   alias cdp = "cd ~/work/Projects/"
 
   # rails
-  alias armagedon='reset && rake db:drop db:create db:migrate db:seed && rails s'
+  alias armagedon="reset && rake db:drop db:create db:migrate db:seed && rails s"
   alias cov='/usr/bin/open -a "/Applications/Google Chrome.app" coverage/index.html'
   ```
 
