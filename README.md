@@ -34,46 +34,46 @@ __Shortcut__          __Result__
 
 Aliases can be easily created in your `~/.bash_profile` file, and have the following syntax:
 
-  ```Ruby
-  alias gb="git branch"
-  ```
+```Ruby
+alias gb="git branch"
+```
 
 Widely used aliases:
 
-  ```bash
-  # git
-  alias gs="git status"
-  alias gb="git branch"
-  alias ga="git add .; git add -u ."
-  alias glo='git log --pretty=format:"%h%x09%an%x09%s"'
-  alias gpro="git pull --rebase origin"
-  alias editcommit="git commit --amend -m"
+```Ruby
+# git
+alias gs="git status"
+alias gb="git branch"
+alias ga="git add .; git add -u ."
+alias glo='git log --pretty=format:"%h%x09%an%x09%s"'
+alias gpro="git pull --rebase origin"
+alias editcommit="git commit --amend -m"
 
-  # rails
-  alias r="reset"
-  alias rs="rails server"
-  alias rrs="reset && rails server"
-  alias rc="rails console"
+# rails
+alias r="reset"
+alias rs="rails server"
+alias rrs="reset && rails server"
+alias rc="rails console"
 
-  # etc
-  alias s.="subl ."
-  alias psgrep="ps aux | grep"
-  alias h?="history | grep"
-  alias editbash="open ~/.bash_profile"
-  ```
+# etc
+alias s.="subl ."
+alias psgrep="ps aux | grep"
+alias h?="history | grep"
+alias editbash="open ~/.bash_profile"
+```
 
 You make your own, for example my custom aliases:
 
-  ```bash
-  # folders
-  alias .="cd ."
-  alias ..="cd .."
-  alias cdp = "cd ~/work/Projects/"
+```Ruby
+# folders
+alias .="cd ."
+alias ..="cd .."
+alias cdp = "cd ~/work/Projects/"
 
-  # rails
-  alias armagedon="reset && rake db:drop db:create db:migrate db:seed && rails s"
-  alias cov='/usr/bin/open -a "/Applications/Google Chrome.app" coverage/index.html'
-  ```
+# rails
+alias armagedon="reset && rake db:drop db:create db:migrate db:seed && rails s"
+alias cov='/usr/bin/open -a "/Applications/Google Chrome.app" coverage/index.html'
+```
 
 __Note:__ you’ll need to open a new Terminal window for changes in ~/.bash_profile to take place.
 
@@ -81,42 +81,42 @@ __Note:__ you’ll need to open a new Terminal window for changes in ~/.bash_pro
 
 `!!` __- previous command__
 
-  ```Ruby
-  $ rm path/to/thing
-  Permission denied
-  $ sudo !!
-  sudo rm path/to/thing
-  ```
+```bash
+$ rm path/to/thing
+Permission denied
+$ sudo !!
+sudo rm path/to/thing
+```
 
 `!$` __- last argument of the previous command__
 
-  ```Ruby
-  $ mkdir path/to/thing
-  $ cd !$
-  cd path/to/thing
-  ```
+```bash
+$ mkdir path/to/thing
+$ cd !$
+cd path/to/thing
+```
 
 `!string` __- most recent command starting with__
 
-  ```Ruby
-  $ rake db:migrate:reset db:seed
-  $ rails s
-  $ !rake # re-runs that first command
-  ```
+```bash
+$ rake db:migrate:reset db:seed
+$ rails s
+$ !rake # re-runs that first command
+```
 
 `!number` __- numbered command__
 
-  ```Ruby
-  $ history | grep heroku
-  492 heroku run rake search:reindex -r production
-  495 heroku maintenance:off -r production
-  496 heroku run rails c -r production
-  $ !495
-  ```
+```bash
+$ history | grep heroku
+492 heroku run rake search:reindex -r production
+495 heroku maintenance:off -r production
+496 heroku run rails c -r production
+$ !495
+```
 
 This technique is perfect for an alias:
 
-```Ruby
+```bash
 $ alias h?="history | grep"
 $ h? heroku
 492 heroku run rake search:reindex -r production
@@ -129,18 +129,18 @@ $ !495
 
 For commands that take multiple, similar arguments, you can use {old,new} to expand one argument into two or more. For example:
 
-  ```Ruby
-  mv app/models/foo.rb app/models/foobar.rb
-  ```
+```bash
+mv app/models/foo.rb app/models/foobar.rb
+```
 
 can be
 
-  ```Ruby
-  mv app/models/{foo,foobar}.rb
-  ```
+```bash
+mv app/models/{foo,foobar}.rb
+```
 
 or even
 
-  ```Ruby
-  mv app/models/foo{,bar}.rb
-  ```
+```bash
+mv app/models/foo{,bar}.rb
+```
