@@ -237,3 +237,7 @@ ssh user@host.com "mysqldump -u db_user -h db_host -pdb_password db_name | gzip"
 ```
 
 __Bonus tip:__ store long commands like this in [boom](https://github.com/holman/boom) for easy recall.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sergii/rails-habits/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
