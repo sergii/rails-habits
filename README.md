@@ -157,7 +157,33 @@ $ mv app/models/foo{,bar}.rb
 
 ### SSH Setup
 
---
+First, we need to check for existing ssh keys on your computer. Open up Terminal and run:
+
+```bash
+cd ~/.ssh
+ls
+# Lists the files in your .ssh directory
+```
+
+If files are missing or do we want to rewrite them to generate a new SSH key, enter the code below. We want the default settings so when asked to enter a file in which to save the key, just press enter.
+
+```bash
+ssh-keygen -t rsa -C "your_email@example.com"
+# Creates a new ssh key, using the provided email as a label
+# Generating public/private rsa key pair.
+# Enter file in which to save the key (/home/you/.ssh/id_rsa):
+...
+```
+
+After generate a key, add him to system:
+
+`$ ssh-add id_rsa`
+
+Now you may copy `id_rsa.pub` key to your server or repo system.
+
+For detailed instructions of setup SSH  (create a key with a name other than the default, use passphrase etc.) please follow the links:
+* [Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys) for __github__
+* [Set up SSH for Git](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git) for __bitbucket__
 
 ### SSH Configuration
 
