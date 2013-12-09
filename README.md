@@ -160,15 +160,15 @@ $ mv app/models/foo{,bar}.rb
 First, we need to check for existing ssh keys on your computer. Open up Terminal and run:
 
 ```bash
-cd ~/.ssh
-ls
+$ cd ~/.ssh
+$ ls
 # Lists the files in your .ssh directory
 ```
 
 If files are missing or do we want to rewrite them to generate a new SSH key, enter the code below. We want the default settings so when asked to enter a file in which to save the key, just press enter.
 
 ```bash
-ssh-keygen -t rsa -C "your_email@example.com"
+$ ssh-keygen -t rsa -C "your_email@example.com"
 # Creates a new ssh key, using the provided email as a label
 # Generating public/private rsa key pair.
 # Enter file in which to save the key (/home/you/.ssh/id_rsa):
