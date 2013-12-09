@@ -40,7 +40,7 @@ Aliases can be easily created in your `~/.bash_profile` file, and have the follo
 
 Widely used aliases:
 
-  ```Ruby
+  ```bash
   # git
   alias gs="git status"
   alias gb="git branch"
@@ -64,7 +64,7 @@ Widely used aliases:
 
 You make your own, for example my custom aliases:
 
-  ```Ruby
+  ```bash
   # folders
   alias .="cd ."
   alias ..="cd .."
