@@ -10,6 +10,9 @@ This guide contain the best approaches and tools for Ruby on Rails 3 & 4 develop
   * [History Expansion](#history-expansion)
   * [Argument Expansion](#argument-expansion)
   * [SSH](#ssh)
+    * [SSH Setup](#ssh-setup)
+    * [SSH Confuguration](#ssh-configuration)
+    * [Invoking Remote Commands with SSH](#invoking-remote-commands-with-ssh)
 * [Git](#git)
 * [Development](#development) (in progress)
 * [Testing](#testing) (in progress)
@@ -172,8 +175,8 @@ $ ssh administrator@192.168.0.1:3000
 
 And now we can use the configuration file. There are two config files:
 
-`~/.ssh/config)` - user's configuration file
-`/etc/ssh/ssh_config` - system-wide configuration file
+* `~/.ssh/config)` - user's configuration file
+* `/etc/ssh/ssh_config` - system-wide configuration file
 
 Since I'm one user on my computer, we will use the configuration file `/etc/ssh/ssh_config`. You can use this configuration file to create quick aliases for hosts and setting host-specific options that aren’t addressable by DNS:
 
