@@ -15,6 +15,7 @@ This guide contain the best approaches and tools for Ruby on Rails 3 & 4 develop
     * [Invoking Remote Commands with SSH](#invoking-remote-commands-with-ssh)
 * [Git](#git)
 * [Development](#development) (in progress)
+ * [Overwritte some gems stuff](#overwritte-some-gem-stuff)
 * [Testing](#testing) (in progress)
     * [Cucumber](#cucumber) (in progress)
     * [RSpec](#rspec) (in progress)
@@ -237,6 +238,48 @@ ssh user@host.com "mysqldump -u db_user -h db_host -pdb_password db_name | gzip"
 ```
 
 __Bonus tip:__ store long commands like this in [boom](https://github.com/holman/boom) for easy recall.
+
+# Overwritte some gem stuff
+
+For example overriding Devise controllers and views using namespaces:
+
+Create the following folders:
+
+```bash
+app/controllers/overwritten_devise
+app/views/overwritten_devise
+```
+
+Put all controllers that you want to override into `app/controllers/overwritten_devise` and add `OverwrittenDevise` namespace to controller class names. Registrations example:
+
+```bash
+# app/controllers/overwritten_devise/registrations_controller.rb
+class OverwrittenDevise::RegistrationsController < Devise::RegistrationsController
+
+  ...
+
+  def create
+    # add custom create logic here
+  end
+
+  ...    
+
+end 
+```
+
+Change your routes accordingly:
+
+```bash
+devise_for :users,
+           :controllers  => {
+             :registrations => 'overwritten_devise/registrations',
+             # ...
+           }
+```
+
+Copy all required views into `app/views/overwritten_devise` from Devise gem folder or use `rails generate devise:views`, delete the views you are not overriding and rename devise folder to `overwritten_devise`.
+
+This way you will have everything neatly organized in two folders.
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sergii/rails-habits/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
