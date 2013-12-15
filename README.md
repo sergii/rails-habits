@@ -15,6 +15,7 @@ This guide contain the best approaches and tools for Ruby on Rails 3 & 4 develop
     * [Invoking Remote Commands with SSH](#invoking-remote-commands-with-ssh)
 * [Git](#git)
 * [Development](#development) (in progress)
+* [Send Mail](#send-mail)
  * [Overwritte some gems stuff](#overwritte-some-gem-stuff)
 * [Testing](#testing) (in progress)
     * [Cucumber](#cucumber) (in progress)
@@ -280,6 +281,16 @@ devise_for :users,
 Copy all required views into `app/views/overwritten_devise` from Devise gem folder or use `rails generate devise:views`, delete the views you are not overriding and rename devise folder to `overwritten_devise`.
 
 This way you will have everything neatly organized in two folders.
+
+### Swnd Mail
+
+Email sent from a web application is called [transactional email](http://blog.mailchimp.com/what-is-transactional-email/). As a website visitor, you’ve
+probably seen transactional email such as these messages:
+
+* sign up confirmation email
+* response to a password reset request
+* acknowledgment of a purchase
+* notice of a change to a user profile setting
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/sergii/rails-habits/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
