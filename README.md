@@ -14,6 +14,7 @@ This guide contain the best approaches and tools for Ruby on Rails 3 & 4 develop
     * [SSH Confuguration](#ssh-configuration)
     * [Invoking Remote Commands with SSH](#invoking-remote-commands-with-ssh)
 * [Git](#git)
+ * [How rolled back to a specific commit](#how-rolled-back-to-a-specific-commit)
 * [Development](#development) (in progress)
 * [Send Mail](#send-mail)
  * [Overwritte some gems stuff](#overwritte-some-gem-stuff)
@@ -282,7 +283,31 @@ Copy all required views into `app/views/overwritten_devise` from Devise gem fold
 
 This way you will have everything neatly organized in two folders.
 
-### Swnd Mail
+# Git
+
+## How rolled back to a specific commit
+```bash
+git checkout -b new_name_branch commit_number
+```
+
+for example
+
+```bash
+git checkout -b broken_master 3851056
+```
+
+or
+
+```bash
+git branch broken_master
+git push origin broken_master
+git reset --hard 3851056
+git push origin master --force
+```
+
+# Development
+
+# Send Mail
 
 Email sent from a web application is called [transactional email](http://blog.mailchimp.com/what-is-transactional-email/). As a website visitor, you’ve
 probably seen transactional email such as these messages:
